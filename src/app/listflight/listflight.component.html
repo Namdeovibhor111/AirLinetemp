@@ -1,0 +1,30 @@
+<div class="container">
+    <h4 class="text-success">Flight List</h4>
+    <div class="jumbotron">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Flight Id</th>
+                    <th>Flight Name</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Arrival time</th>
+                    <th>Departure time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let flight of flightlist">
+                    <td>{{flight.fId}}</td>
+                    <td>{{flight.fname}}</td>
+                    <td>{{flight.source}}</td>
+                    <td>{{flight.destination}}</td>
+                    <td>{{flight.arrTime}}</td>
+                    <td>{{flight.deptTime}}</td>
+                    <td></td>
+                    <td><a [routerLink]="['/find/',flight.fId]">Details</a></td> &nbsp; &nbsp; &nbsp;
+                    <td><a [routerLink]="['/edit/',flight.fId]">Edit</a></td> &nbsp; &nbsp; &nbsp;
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

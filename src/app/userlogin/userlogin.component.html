@@ -1,0 +1,57 @@
+<p>userlogin works!</p>
+<div
+  class="card"
+  style="border-radius: 20px; margin: 50px 300px; padding-left: 50px; text-align: center;"
+>
+  <h1 style="background-color:bisque" class="display-4 text-center">Customer Login</h1>
+  <form
+    class="form-horizontal"
+    (ngSubmit)="saveLogin(userlogindata)"
+    #studentLoginForm="ngForm"
+  >
+    <div class="form-group row text-center">
+      <label for="inputemail" class="col-2 col-form-label" style="font-size: 20px"
+        >Email</label
+      >
+      <div class="col-8">
+        <input
+          type="text"
+          name="inputemail"
+          class="form-control"
+          id="inputemail"
+          placeholder="Enter Your email"
+          [(ngModel)]="userlogindata.email"
+          required
+          #email="ngModel"
+        />
+      </div>
+    </div><br>
+    <div class="form-group row text-center">
+      <label
+        for="inputPassword3"
+        class="col-2 col-form-label"
+        style="font-size: 20px"
+        >Password</label
+      >
+      <div class="col-8">
+        <input
+          type="password"
+          name="inputPassword3"
+          class="form-control"
+          id="inputPassword3"
+          placeholder="Enter Your Password"
+          [(ngModel)]="userlogindata.custPass"
+          required
+          #Password="ngModel"
+        />
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="child form-group col text-center">
+      <button name="Login" type="submit" class="btn btn-primary btn-lg">
+        Log In
+      </button>
+    </div>
+  </form>
+</div>
