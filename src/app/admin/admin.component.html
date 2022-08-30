@@ -1,5 +1,53 @@
 <h1>Works</h1>
-
+<div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <h1 class="page-title">Admin Login</h1>
+        <form #loginForm="ngForm" (submit)="saveLogin()">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="adminlogindata.adminusername"
+              [ngModelOptions]="{ standalone: true }"
+              adminusername="username"
+              #username="ngModel"
+              required
+            />
+          </div>
+          <div
+            *ngIf="username.invalid && (username.dirty || username.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="username.errors?.['required']">Username is required!</div>
+          </div>
+  
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              [(ngModel)]="adminlogindata.adminpass"
+              [ngModelOptions]="{ standalone: true }"
+              adminpass="password"
+              #password="ngModel"
+              required
+            />
+          </div>
+  
+          <div
+            *ngIf="password.invalid && (password.dirty || username.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="password.errors?.['required']">Password is required!</div>
+          </div>
+  
+          <button type="submit" class="btn btn-warning">LogIn</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
 

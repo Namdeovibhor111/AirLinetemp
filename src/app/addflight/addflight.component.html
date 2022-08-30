@@ -1,0 +1,24 @@
+<p>addflight works!</p>
+<form
+  #filghtForm="ngForm"
+  (submit)="addFlight(filghtForm.value)"
+  style="margin-left: 10px"
+>
+  Flight Id: <input type="number" name="fId" id="fId" ngModel /> <br />
+  Flight name : <input type="text" name="fname" id="fname" ngModel /> <br />
+  Source : <input type="text" name="source" id="source" ngModel /> <br />
+  Destination :
+  <input type="text" name="destination" id="destination" ngModel /> <br />
+  Arrival Time : <input type="time" name="arrTime" id="arrTime" ngModel />
+  <br />
+  Departure Time:
+  <input type="time" name="deptTime" id="deptTime" ngModel /> <br />
+  Duration (hrs) :
+  <input type="number" name="duration" id="duration" ngModel /> <br />
+  Type : <input type="text" name="type" id="type" ngModel /> <br />
+  Fare : <input type="number" name="fare" id="fare" ngModel /> <br />
+  Column : <input type="number" name="col" id="col" ngModel /> <br />
+  Row : <input type="number" name="row" id="row" ngModel /> <br />
+
+  <button type="submit">Add</button>
+</form>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddflightComponent } from './addflight/addflight.component';
 import { AdminComponent } from './admin/admin.component';
 import { ListflightComponent } from './listflight/listflight.component';
 import { SearchflightComponent } from './searchflight/searchflight.component';
@@ -8,11 +9,12 @@ import { UserregComponent } from './userreg/userreg.component';
 
 
 const routes: Routes = [
-  {path:'admin',component:AdminComponent},
+  {path:'adminlogin',component:AdminComponent},
   {path:'flightlist',component:ListflightComponent},
   {path:'userlog',component:UserloginComponent},
   {path:'searchflight',component:SearchflightComponent},
-  {path:'userreg',component:UserregComponent}
+  {path:'userreg',component:UserregComponent},
+  {path:'addflight',component:AddflightComponent}
 ];
 
 @NgModule({

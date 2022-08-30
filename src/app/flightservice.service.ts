@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';// for delivering the message/data used for as
 import { Iuserlogin } from './iuserlogin';
 import { Iflightsearch } from './iflightsearch';
 import { Iuser } from './iuser';
+import { Iadminlogin } from './iadminlogin';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,24 @@ httpOptions = {headers:new HttpHeaders({'Content-type':'application/json'})}
   {
 
     return this.httpclient.post<any>(this.url+'/Customer/UserReg',customer,this.httpOptions).pipe(catchError(this.handleError))
+  }
+  addFlight(flight: Iflight): Observable<Iflight> {
+    return this.httpclient
+      .post<Iflight>(`${this.url}/flightdetail/AddFlight`, flight)
+      .pipe(catchError(this.handleError));
+  }
+
+  deleteflight(fId: number): Observable<Iflight> {
+    return this.httpclient
+      .delete<Iflight>(`${this.url}/flightdetail/DeleteFlight/${fId}`)
+      .pipe(catchError(this.handleError));
+  }
+  login(adminlogindata: Iadminlogin): Observable<any> {
+    return this.httpclient
+      .post(`${this.url}/admin/Adminlogin`, adminlogindata, {
+        responseType: 'text',
+      })
+      .pipe(catchError(this.handleError)); //have to change the response type in text formate because from api it is coming in json.
   }
   handleError(error:HttpErrorResponse){
     let errormessage = ''

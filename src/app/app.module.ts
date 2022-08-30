@@ -9,6 +9,8 @@ import { SearchflightComponent } from './searchflight/searchflight.component';
 import { FormsModule } from '@angular/forms';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserregComponent } from './userreg/userreg.component';
+import { DeleteflightComponent } from './deleteflight/deleteflight.component';
+import { AddflightComponent } from './addflight/addflight.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { UserregComponent } from './userreg/userreg.component';
     SearchflightComponent,
     UserloginComponent,
     UserregComponent,
+    DeleteflightComponent,
+    AddflightComponent,
  
   ],
   imports: [
