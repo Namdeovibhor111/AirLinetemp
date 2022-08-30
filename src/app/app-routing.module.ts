@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddflightComponent } from './addflight/addflight.component';
 import { AdminComponent } from './admin/admin.component';
 import { ListflightComponent } from './listflight/listflight.component';
+import { PaymentComponent } from './payment/payment.component';
 import { SearchflightComponent } from './searchflight/searchflight.component';
+import { SeatselectComponent } from './seatselect/seatselect.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserregComponent } from './userreg/userreg.component';
 
@@ -14,7 +16,9 @@ const routes: Routes = [
   {path:'userlog',component:UserloginComponent},
   {path:'searchflight',component:SearchflightComponent},
   {path:'userreg',component:UserregComponent},
-  {path:'addflight',component:AddflightComponent}
+  {path:'addflight',component:AddflightComponent},
+  {path:'seatselect',component:SeatselectComponent},
+  {path:'payment',component:PaymentComponent}
 ];
 
 @NgModule({

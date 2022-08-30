@@ -1,18 +1,52 @@
-<form (ngSubmit)="searchFlight(searchdata)" #deptForm="ngForm">
-    <div>
-        <label for="id">Enter Source:</label>
-        <input type="text" id="source" name="source" required [(ngModel)]="searchdata.source" #id="ngModel" />
+<body>
+    <form (ngSubmit)="searchFlight(searchdata)" #deptForm="ngForm">
+      
+        <div class="form-group" > 
+            <input id="oneway" type="radio" class="custom-control-input" value="oneway" (click)="toggle()" name="Options" >
+              <label class="custom-control-label" for="oneway">One Way</label>&nbsp;&nbsp;&nbsp;
+            <input id="roundtrip" type="radio" class="custom-control-input" value="roundtrip" (click)="toggle()"name="Options" >
+              <label class="custom-control-label" for="roundtrip">Round Trip</label>
+          </div>
+      <br >
     
-    </div>
-    <div>
-        <label for="name">Enter Destination:</label>
-        <input type="text" id="destination" name="destination" required [(ngModel)]="searchdata.destination" #name="ngModel" />
-     
-    </div>
+      <div class="form-source-destination">
+        <label for="From">From</label>
+        
+        <input type="text" id="source" name="From" required [(ngModel)]="searchdata.source" #id="ngModel" />&nbsp;&nbsp;
 
-    <br><br>
-    <input type="submit" value="Save" class="btn btn-success" [disabled]="!deptForm.valid" />
-</form> 
+
+          <label for="To">To</label>
+          <input type="text" id="destination" name="To" required [(ngModel)]="searchdata.destination" #name="ngModel" />
+
+      </div>
+      <br >
+    
+      <div class="form-group">
+        <label for="start">Departure Date</label>&nbsp;
+        <input type="date" id="start" name="trip-start"
+               value="2018-07-22"
+               min="2022-08-27" max="2022-12-31">&nbsp;&nbsp;
+      
+        <label for="start">Return Date</label>&nbsp;
+        <input type="date" id="start" name="trip-start" 
+                value="2018-07-22" [disabled]="textBoxDisabled"
+                min="2022-08-27" max="2022-12-31" >
+      </div>
+      <br >
+      
+      <div class="form-group">
+        <label for="Pcount">No.of Passengers</label>&nbsp;
+        <input type="number" id="passenger" name="Pcount"min="1" max = "10">
+      </div>
+      <br >
+      
+      <input type="submit" value="Search" class="btn btn-success" [disabled]="!deptForm.valid" />
+      
+    
+    </form>
+    </body>
+<br >
+
 <div class="container">
     <h4 class="text-success">Flight List</h4>
     <div class="jumbotron">
@@ -46,3 +80,77 @@
         </table>
     </div>
 </div>
+
+<div style="text-align: center;">
+<form (ngSubmit)="searchFlightId(flid)" #deptForm="ngForm">
+    
+    <div>
+        <label for="flid">Enter Flight Id:</label>
+     <input type="number" name="flid" id="flid" [(ngModel)]="flid.fid" /> <br />
+    </div>
+
+    <br><br>
+    <input type="submit" value="Save" class="btn btn-success" [disabled]="!deptForm.valid" />
+</form> 
+</div>
+<!-- <form (ngSubmit)="searchFlight(searchdata)" #deptForm="ngForm">
+    
+    <div>
+        <label for="id">Enter Source:</label>
+        <input type="text" id="source" name="source" required [(ngModel)]="searchdata.source" #id="ngModel" />
+    
+    </div>
+    <div>
+        <label for="name">Enter Destination:</label>
+        <input type="text" id="destination" name="destination" required [(ngModel)]="searchdata.destination" #name="ngModel" />
+     
+    </div>
+
+    <br><br>
+    <input type="submit" value="Save" class="btn btn-success" [disabled]="!deptForm.valid" />
+</form> 
+
+
+<div class="container">
+    <h4 class="text-success">Flight List</h4>
+    <div class="jumbotron">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Flight Id</th>
+                    <th>Flight Name</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Arrival time</th>
+                    <th>Departure time</th>
+                    <th>Duration</th>
+                    <th>Fare</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let flight of flightlist">
+                    <td>{{flight.id}}</td>
+                    <td>{{flight.fname}}</td>
+                    <td>{{flight.source}}</td>
+                    <td>{{flight.destination}}</td>
+                    <td>{{flight.arrivalTime}}</td>
+                    <td>{{flight.departuretime}}</td>
+                    <td>{{flight.duration}}</td>
+                    <td>{{flight.fare}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<form (ngSubmit)="searchFlightId(flid)" #deptForm="ngForm">
+    
+    <div>
+        <label for="flid">Enter Flight Id:</label>
+     <input type="number" name="flid" id="flid" [(ngModel)]="flid.fid" /> <br />
+    </div>
+
+    <br><br>
+    <input type="submit" value="Save" class="btn btn-success" [disabled]="!deptForm.valid" />
+</form>  -->

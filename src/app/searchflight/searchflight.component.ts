@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Iflight } from '../iflight';
 import { Iflightsearch } from '../iflightsearch';
 import { FlightserviceService } from '../flightservice.service';
-import { Router } from '@angular/router';
+import { Data, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { GlobalClass } from '../global-class';
+import { Ifindid } from '../ifindid';
 
 
 @Component({
@@ -11,8 +14,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./searchflight.component.css']
 })
 export class SearchflightComponent implements OnInit {
+  textBoxDisabled = false;
+
+  toggle(){
+    this.textBoxDisabled = !this.textBoxDisabled;
+  }
+
  searchdata:Iflightsearch = {source:'',destination:''}
+flid:Ifindid ={fid:0}
+
  flightlist:any[]=[]
+ public id:Number = 0
   constructor(private flightservice:FlightserviceService, private router:Router) { }
 searchFlight(flight:Iflightsearch){
  this.searchdata=flight
@@ -26,6 +38,12 @@ searchFlight(flight:Iflightsearch){
   ngOnInit(): void {
  
     
+  }
+  searchFlightId(flid:Ifindid)
+  {
+        GlobalClass.fid=flid.fid
+   console.log( GlobalClass.fid)
+  this.router.navigate(['/userlog'])
   }
 
 }

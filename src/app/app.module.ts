@@ -11,6 +11,8 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserregComponent } from './userreg/userreg.component';
 import { DeleteflightComponent } from './deleteflight/deleteflight.component';
 import { AddflightComponent } from './addflight/addflight.component';
+import { SeatselectComponent } from './seatselect/seatselect.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { AddflightComponent } from './addflight/addflight.component';
     UserregComponent,
     DeleteflightComponent,
     AddflightComponent,
+    SeatselectComponent,
+    PaymentComponent,
  
   ],
   imports: [

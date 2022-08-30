@@ -15,7 +15,16 @@
   <input type="time" name="deptTime" id="deptTime" ngModel /> <br />
   Duration (hrs) :
   <input type="number" name="duration" id="duration" ngModel /> <br />
-  Type : <input type="text" name="type" id="type" ngModel /> <br />
+  <!-- Type : <input type="text" name="type" id="type" ngModel /> <br /> -->
+  type : <select name="type" id="type" ngModel>
+    <option>
+        One Way
+    </option>
+    <option>
+        Round Trip
+    </option>
+  </select>
+  <br />
   Fare : <input type="number" name="fare" id="fare" ngModel /> <br />
   Column : <input type="number" name="col" id="col" ngModel /> <br />
   Row : <input type="number" name="row" id="row" ngModel /> <br />

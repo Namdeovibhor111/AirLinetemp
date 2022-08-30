@@ -27,11 +27,13 @@ flightlist:Iflight[]=[]
       this.flightservice.deleteflight(id).subscribe(
         ( ) => {
           alert('Delete flight successfully!!');
+          window.location.reload();
           this.router.navigate(['flightlist']);
         },
         (err) => {
           alert('Something went wrong!!!');
           console.log(err);
+         
         }
       );
     }
