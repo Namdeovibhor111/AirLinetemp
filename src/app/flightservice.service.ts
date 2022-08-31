@@ -60,7 +60,10 @@ httpOptions = {headers:new HttpHeaders({'Content-type':'application/json'})}
     
     return this.httpclient.get<Ibookingdetails>(this.url+'/bookingdetail/confirmbooking/'+num).pipe(catchError(this.handleError));
   }
-
+  cancelbooking():Observable<any>{
+    const num = GlobalClass.cancelid.toString()
+    return this.httpclient.put<Ibookingdetails>(this.url+'/bookingdetail/cancelbooking/'+num,this.httpOptions).pipe(catchError(this.handleError));
+  }
   handleError(error:HttpErrorResponse){
     let errormessage = ''
     errormessage=error.status +'\n'+ error.statusText + '\n' + error.error

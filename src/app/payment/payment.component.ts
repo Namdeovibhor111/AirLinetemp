@@ -6,6 +6,7 @@ import { FlightserviceService } from '../flightservice.service';
 import { Ibookingdetails } from '../ibookingdetails';
 import { DatePipe } from '@angular/common'
 
+
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -13,6 +14,8 @@ import { DatePipe } from '@angular/common'
 })
 
 export class PaymentComponent implements OnInit {
+  
+
   cvc!: any;
   cardnumber!: any;
   name!: any;
@@ -24,10 +27,12 @@ export class PaymentComponent implements OnInit {
     bookingDate: '2022-08-31',
     flightDate: '2022-09-04',
     passenger:3,
-    totalFare: 9200,
+    totalFare: GlobalClass.fare,
     bookingStatus: 'Confirmed'
   }
-  constructor(private flightservice:FlightserviceService,private router:Router) { }
+  constructor(private flightservice:FlightserviceService,private router:Router) {
+    
+   }
 
   ngOnInit(): void {
 

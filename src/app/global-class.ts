@@ -10,5 +10,6 @@ export class GlobalClass {
     public static fare:Number
     public static source:string
     public static destination:string
+    public static cancelid:Number
     public static Isuserlogin:boolean = false
 }

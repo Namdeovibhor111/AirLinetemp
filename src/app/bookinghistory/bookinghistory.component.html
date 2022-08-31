@@ -25,7 +25,8 @@
                 <td>{{data.totalFare}}</td>
                 <td>{{data.bookingStatus}}</td>
                 <td></td>
-                <td><button class="btn btn-info">Cancel booking</button></td> &nbsp; &nbsp; &nbsp;
+                <td><!-- <button class="btn btn-info">Cancel booking</button> -->
+                    <button class="btn btn-warning" type="button" (click)="Cancel(data)">Cancel Flight</button></td>
             </tr>
         </tbody>
     </table>
