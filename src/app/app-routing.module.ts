@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddflightComponent } from './addflight/addflight.component';
 import { AdminComponent } from './admin/admin.component';
+import { BookinghistoryComponent } from './bookinghistory/bookinghistory.component';
+import { GlobalClass } from './global-class';
 import { ListflightComponent } from './listflight/listflight.component';
 import { PaymentComponent } from './payment/payment.component';
 import { SearchflightComponent } from './searchflight/searchflight.component';
@@ -18,7 +20,9 @@ const routes: Routes = [
   {path:'userreg',component:UserregComponent},
   {path:'addflight',component:AddflightComponent},
   {path:'seatselect',component:SeatselectComponent},
-  {path:'payment',component:PaymentComponent}
+  {path:'payment',component:PaymentComponent},
+  {path:'mybooking',component:BookinghistoryComponent}
+
 ];
 
 @NgModule({

@@ -9,6 +9,8 @@ import { Iuserlogin } from './iuserlogin';
 import { Iflightsearch } from './iflightsearch';
 import { Iuser } from './iuser';
 import { Iadminlogin } from './iadminlogin';
+import { Ibookingdetails } from './ibookingdetails';
+import { GlobalClass } from './global-class';
 
 @Injectable({
   providedIn: 'root'
@@ -50,6 +52,15 @@ httpOptions = {headers:new HttpHeaders({'Content-type':'application/json'})}
       })
       .pipe(catchError(this.handleError)); //have to change the response type in text formate because from api it is coming in json.
   }
+  booking(bookdata:Ibookingdetails):Observable<any>{
+    return this.httpclient.post<Ibookingdetails>(this.url + '/bookingdetail/BookFlight',bookdata,this.httpOptions).pipe(catchError(this.handleError));
+  }
+  mybooking():Observable<any>{
+    const num = GlobalClass.cid.toString()
+    
+    return this.httpclient.get<Ibookingdetails>(this.url+'/bookingdetail/confirmbooking/'+num).pipe(catchError(this.handleError));
+  }
+
   handleError(error:HttpErrorResponse){
     let errormessage = ''
     errormessage=error.status +'\n'+ error.statusText + '\n' + error.error

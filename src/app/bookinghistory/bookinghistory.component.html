@@ -1,0 +1,32 @@
+<p>bookinghistory works!</p>
+{{Name}}
+<div class="jumbotron">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Booking Id</th>
+                <th>Customer Id</th>
+                <th>Flight Id</th>
+                <th>Booking Date</th>
+                <th>Flight Date</th>
+                <th>Passenger</th>
+                <th>Total Fare</th>
+                <th>Booking Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of mybooking">
+                <td>{{data.bId}}</td>
+                <td>{{data.cId}}</td>
+                <td>{{data.fId}}</td>
+                <td>{{data.bookingDate}}</td>
+                <td>{{data.flightDate}}</td>
+                <td>{{data.passenger}}</td>
+                <td>{{data.totalFare}}</td>
+                <td>{{data.bookingStatus}}</td>
+                <td></td>
+                <td><button class="btn btn-info">Cancel booking</button></td> &nbsp; &nbsp; &nbsp;
+            </tr>
+        </tbody>
+    </table>
+</div>

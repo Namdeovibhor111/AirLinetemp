@@ -25,7 +25,7 @@ customer:any ={}
     GlobalClass.cid=Number(this.customer.cId)
     GlobalClass.Cname=this.customer.fname
      console.log("customer id "+GlobalClass.cid)
-     console.log("Fliight id "+GlobalClass.fid)
+     console.log("Fliight id "+GlobalClass.fId)
      console.log("Fliight naem "+GlobalClass.Cname)
       alert("Login Successful!")
       GlobalClass.Isuserlogin=true

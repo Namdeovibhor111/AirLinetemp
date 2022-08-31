@@ -1,4 +1,5 @@
-<body>
+<div >
+<body >
     <form (ngSubmit)="searchFlight(searchdata)" #deptForm="ngForm">
       
         <div class="form-group" > 
@@ -40,13 +41,15 @@
       </div>
       <br >
       
-      <input type="submit" value="Search" class="btn btn-success" [disabled]="!deptForm.valid" />
+      <input type="submit" value="Search Flights" class="btn btn-success" [disabled]="!deptForm.valid" />
       
     
     </form>
-    </body>
-<br >
 
+</body>
+</div>
+<br >
+<hr>
 <div class="container">
     <h4 class="text-success">Flight List</h4>
     <div class="jumbotron">
@@ -60,39 +63,45 @@
                     <th>Arrival time</th>
                     <th>Departure time</th>
                     <th>Duration</th>
-                    <th>Fare</th>
+                    <th>Economy Class Fare(Per Person)</th>
+                    <th>Buisness Class Fare( Per Person)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let flight of flightlist">
-                    <td>{{flight.id}}</td>
+                    <td>{{flight.fId}}</td>
                     <td>{{flight.fname}}</td>
                     <td>{{flight.source}}</td>
                     <td>{{flight.destination}}</td>
                     <td>{{flight.arrivalTime}}</td>
                     <td>{{flight.departuretime}}</td>
                     <td>{{flight.duration}}</td>
-                    <td>{{flight.fare}}</td>
+                    <td>Rs. {{flight.fare }}  </td>
+                    <td>Rs. {{flight.fare +3000}}</td>
                     <td></td>
-                    <td><a [routerLink]="['/find/',flight.id]">Book Ticket</a></td> &nbsp; &nbsp; &nbsp;
+                     <td> <!--<a [routerLink]="['/find/',flight.id]">Book Ticket</a> -->
+                        <button class="btn btn-primary" type="button" (click)="onSelect(flight)">Book Flight</button></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
-
-<div style="text-align: center;">
-<form (ngSubmit)="searchFlightId(flid)" #deptForm="ngForm">
+<br>
+<br>
+<hr>
+<!-- <div style="text-align: center;">
+    <form (ngSubmit)="searchFlightId(flid)" #deptForm="ngForm">
+        
+        <div>
+            <label for="flid">Enter Flight Id:</label>
+         <input type="number" name="flid" id="flid" [(ngModel)]="flid.fid" /> <br />
+        </div>
     
-    <div>
-        <label for="flid">Enter Flight Id:</label>
-     <input type="number" name="flid" id="flid" [(ngModel)]="flid.fid" /> <br />
-    </div>
+        <br><br>
+        <input type="submit" value="Book Flight" class="btn btn-success" [disabled]="!deptForm.valid" />
+    </form> 
+    </div> -->
 
-    <br><br>
-    <input type="submit" value="Save" class="btn btn-success" [disabled]="!deptForm.valid" />
-</form> 
-</div>
 <!-- <form (ngSubmit)="searchFlight(searchdata)" #deptForm="ngForm">
     
     <div>

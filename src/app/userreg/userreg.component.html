@@ -10,17 +10,17 @@
                   <h2 style="text-align:center;background-color:antiquewhite" class="mb-5 text-uppercase">User Registration</h2>
                     <form #myform="ngForm" id="form1" (ngSubmit)="onSubmit(myform)">
                     <div class="row">
-                      <div class="cid">
+                      <!-- <div class="cid">
                       <div class="form-outline">
                           <label for="cId" class="form-label">Enter Id</label>
                           <input #cId="ngModel" required minlength="4" maxlength="25" type="number" name="cId"  placeholder="enter cId" class="form-control form-control-lg" ngModel>
                           <div *ngIf="cId.invalid && (cId.dirty || cId.touched ||myform.submitted)">
                               <small *ngIf="cId.hasError('required')">
                                   EnterId
-                              </small>
+                              </small> 
                           </div>
                       </div>
-                  </div><br>
+                  </div>--><br> 
                         <div class="col-md-6 mb-4">
                             <div class="form-outline">
                                 <label for="title" class="form-label">Enter Title</label>
@@ -94,7 +94,7 @@
                 <div class="form-outline mb-4">
                     <label for="Mobile" class="form-label">Enter Mobile</label>
 
-                    <input #Mob_No="ngModel" required minlength="10" maxlength="10" type="text" name="Mob_No"  placeholder="enter Mob_No" class="form-control form-control-lg" ngModel>
+                    <input #Mob_No="ngModel" required minlength="10" maxlength="10" type="number" name="Mob_No"  placeholder="enter Mob_No" class="form-control form-control-lg" ngModel>
                     <div *ngIf=" Mob_No.invalid && (Mob_No.dirty || Mob_No.touched||myform.submitted)">
                         <div><small *ngIf="Mob_No.hasError('pattern')">Enter a valid Phone number</small></div>
                         <small *ngIf="Mob_No.hasError('required')">Phone Number is a required field</small>

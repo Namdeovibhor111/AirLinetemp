@@ -8,5 +8,5 @@ export interface Iflight {
     duration:Date,
     row:Number,
     coloumn:Number,
-    fair:Number
+    fare:Number
 }

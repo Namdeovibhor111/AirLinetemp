@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class SeatselectComponent implements OnInit {
  Cust_name :string = GlobalClass.Cname
+ Fid :Number = GlobalClass.fId
+ Cid :Number = GlobalClass.cid
 
   constructor(private router:Router) { }
 
